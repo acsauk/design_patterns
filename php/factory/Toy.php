@@ -2,10 +2,11 @@
 abstract class Toy {
   public $name = '';
   public $price = 0;
+  public $engine = null;
+  public $wheels = array();
+  public $rotorBlade = null;
 
-  public function prepare() {
-    echo $this->name. ' is prepared';
-  }
+  abstract function prepare();
 
   public function package() {
     echo $this->name. ' is packaged';
