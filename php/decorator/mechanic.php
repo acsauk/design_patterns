@@ -10,5 +10,19 @@
     }
   }
 
-  echo (new BasicInspection())->getCost();
+  class OilChange implements CarService {
+    protected $carService;
+
+    function __construct(CarService $carService)
+    {
+      $this->carService = $carService;
+    }
+
+    public function getCost()
+    {
+      return 19 + $this->carService->getCost();
+    }
+  }
+
+  echo (new OilChange(new BasicInspection()))->getCost();
 ?>
