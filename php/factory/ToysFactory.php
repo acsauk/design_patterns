@@ -1,24 +1,17 @@
 <?php
 
-class ToysFactory {
+abstract class ToysFactory {
 
-  public $simpleFactory;
-
-  public function __construct(SimpleFactory $simpleFactory) {
-    $this->simpleFactory = $simpleFactory;
-  }
-
-  public function produceToys($toyName) {
+  public function produceToy($toyName) {
     $toy = null;
-
-    $toy = $this->simpleFactory->createToy($toyName);
-
+    $toy = $this->createToy($toyName);
     $toy->prepare();
     $toy->package();
     $toy->label();
-
     return $toy;
   }
+
+  abstract public function createToy($toyName);
 }
 
 ?>
