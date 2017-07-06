@@ -8,8 +8,8 @@
     ],
     "require": {},
     "autoload": {
-      "psr-4": {
-        "Acme\\": "src/"
-      }
+        "psr-4": {
+            "Acme\\": "src"
+        }
     }
 }
